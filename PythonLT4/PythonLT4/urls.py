@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from users.views import hello, index, lobbies
 from users.views import CreateUserView
+from movies.views import MoviesListView, ActorListView, MovieCreateView, ActorCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,8 @@ urlpatterns = [
     path('hello/<user>', hello),
     path('lobbies/', lobbies, name='lobbies'),
     path('create-user/', CreateUserView.as_view(), name='create-user'),
+    path('movies/', MoviesListView.as_view(), name='movies'),
+    path('actors/', ActorListView.as_view(), name='actors'),
+    path('create-movie/', MovieCreateView.as_view(), name='create-movie'),
+    path('create-actor/', ActorCreateView.as_view(), name='create-actor'),
 ]
